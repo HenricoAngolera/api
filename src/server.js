@@ -4,6 +4,10 @@ const express = require('express')
 const app = express()
 // initialize the express.
 
+app.get('/message', (request, response) => {
+  response.send('Hello World!')
+})
+
 const PORT = 3333
 // the port that is for listening.
 
