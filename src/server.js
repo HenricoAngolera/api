@@ -3,11 +3,13 @@ const express = require('express')
 
 const app = express()
 // initialize the express.
-
+app.use(express.json())
+// declare to express to use JSON.
 
 app.post('/users', (request, response) => {
+  const { name, email, password } = request.body
 
-  response.send("Você chamou o POST.")
+  response.json({ name, email, password })
 })
 
 const PORT = 3333
