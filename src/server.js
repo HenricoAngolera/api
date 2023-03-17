@@ -1,16 +1,14 @@
 const express = require('express')
 // taking the express folder and dumping it in this const.
 
+const routes = require('./routes')
+
 const app = express()
 // initialize the express.
 app.use(express.json())
 // declare to express to use JSON.
 
-app.post('/users', (request, response) => {
-  const { name, email, password } = request.body
-
-  response.json({ name, email, password })
-})
+app.use(routes)
 
 const PORT = 3333
 // the port that is for listening.
