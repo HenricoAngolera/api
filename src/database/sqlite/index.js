@@ -12,3 +12,5 @@ async function sqliteConnection() {
 }
 
 module.exports = sqliteConnection;
+
+// SGBD ou DBMS - DataBase Management System
