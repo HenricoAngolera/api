@@ -1,12 +1,13 @@
-const { Router } = require('express')
+const { Router } = require('express');
 
-const NotesController = require('../controllers/NotesController')
+const NotesController = require('../controllers/NotesController');
 
-const notesRoutes = Router()
+const notesRoutes = Router();
 
-const notesController = new NotesController()
+const notesController = new NotesController();
 
-notesRoutes.post('/:user_id', notesController.create)
-notesRoutes.get('/:id', notesController.show)
+notesRoutes.post('/:user_id', notesController.create);
+notesRoutes.get('/:id', notesController.show);
+notesRoutes.delete('/:id', notesController.delete);
 
-module.exports = notesRoutes
+module.exports = notesRoutes;
