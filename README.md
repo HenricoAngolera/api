@@ -12,13 +12,19 @@ Esta foi uma API desenvolvida durante o Stage 08 no Explorer da Rocketseat. E us
 
 ## Documentação
 
-Rodar o seguinte comando para iniciar o projeto e o banco de dados:
+Para instalar os pacotes da pasta node_modules, rodar o seguinte comando:
+
+```bash
+    npm install
+```
+
+Então, podar o seguinte comando para iniciar o projeto e o banco de dados:
 
 ```bash
     npm run dev
 ```
 
-Para criar o restante das tabelas pelo knex:
+Por fim, para criar o restante das tabelas pelo knex:
 
 ```bash
     npm run migrate
