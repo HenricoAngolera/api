@@ -1,15 +1,15 @@
 const { verify } = require("jsonwebtoken");
-const { AppError } = require("../utils/AppError");
+const AppError = require("../utils/AppError");
 const authConfig = require("../config/auth");
 
 function ensureAuthenticated(request, response, next) {
-  const authHeader = request.header.authorization;
+  const authHeader = request.headers.authorization;
 
   if(!authHeader){
     throw new AppError("JWT Token uninformed", 401);
   }
 
-  const [, token] = authHeader.split(" ");
+  const [, token] = authHeader.split(" "); // Barer xxxxxxx
 
   try{
     const {sub : user_id } = verify(token, authConfig.jwt.secret);
