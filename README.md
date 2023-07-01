@@ -51,6 +51,12 @@ Foi desafiador sair do conhecimento em front-end e ir para desafios de back-end.
     - Pesquisar 
 - Tags
     - Mostrar
+ 
+## Relacionados
+
+Segue o projeto front-end desta aplicação:
+
+[RocketNotes](https://github.com/HenricoAngolera/rocketnotes)
 
 
 ## Feedback
