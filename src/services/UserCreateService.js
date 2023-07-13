@@ -3,13 +3,13 @@ const AppError = require('../utils/AppError')
 
 class UserCreateService {
 
-  constructor(userRepository) { // construtor
+  constructor(userRepository) { 
     this.userRepository = userRepository
   }
 
   async execute({ name, email, password }) {
 
-    const checkUserExist = await this.userRepository.findByEmail(email) // this
+    const checkUserExist = await this.userRepository.findByEmail(email) 
 
     if (checkUserExist) {
       throw new AppError('Este email já está em uso.')
@@ -17,7 +17,9 @@ class UserCreateService {
 
     const hashedPassword = await hash(password, 8)
 
-    await this.userRepository.create({ name, email, password: hashedPassword }) // this
+    const userCreated = await this.userRepository.create({ name, email, password: hashedPassword }) 
+  
+    return userCreated;
   }
 }
 
