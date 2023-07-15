@@ -1,17 +1,29 @@
 const UserCreateService = require("./UserCreateService")
 const UserRepositoryInMemory = require("../repositories/UserRepositoryInMemory")
 
-it("user should be create", async () => {
-  const user = {
-    name: "User test",
-    email: "usertest@email.com",
-    password: "123"
-  }
+describe("UserCreateService", () => {
+  it("user should be create", async () => {
+    const user = {
+      name: "User test",
+      email: "usertest@email.com",
+      password: "123"
+    }
+  
+    const userRepositoryInMemory = new UserRepositoryInMemory();
+    const userCreateService = new UserCreateService(userRepositoryInMemory);
+    const userCreated = await userCreateService.execute(user)
+  
+    expect(userCreated).toHaveProperty("id");
+  })
 
-  const userRepositoryInMemory = new UserRepositoryInMemory();
-  const userCreateService = new UserCreateService(userRepositoryInMemory);
-  const userCreated = await userCreateService.execute(user)
+  it("another test", () => {
+    expect(1).toBe(1)
+  })
 
-  expect(userCreated).toHaveProperty("id");
+})
 
+describe("NotesController", () => {
+  it("create notes", () => {
+    expect(1).toBe(2)
+  })
 })
